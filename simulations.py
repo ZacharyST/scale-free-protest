@@ -217,7 +217,8 @@ def experiment_two(out_file='/tmp/exp2.csv'):
     Args:
         out_file: file to write data to
     """
-    scale_params = np.linspace(1, 3, num=200)
+    # Need to round.  Questionable behavior below 1.5.
+    scale_params = np.round(np.linspace(1.5, 3, num=150), 2)  
     run_experiment(out_file, scale_params, [0])
 
 def experiment_three(out_file='/tmp/exp3.csv'):
